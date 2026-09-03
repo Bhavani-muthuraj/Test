@@ -84,7 +84,7 @@ export function SparkBackground() {
 
       // Generate more visible sparks
       const speed = Math.hypot(pointer.x - pointer.px, pointer.y - pointer.py);
-      const count = Math.min(20, 3 + Math.floor(speed / 3)); // More particles
+      const count = Math.min(9, 1 + Math.floor(speed / 3)); // More particles
       for (let i = 0; i < count; i++) {
         const angle = Math.random() * Math.PI * 2;
         const spread = 2 + Math.random() * 15;
@@ -99,7 +99,7 @@ export function SparkBackground() {
           hue: hueBase + (Math.random() - 0.5) * hueRange, // Dynamic hue based on page
         });
       }
-      if (sparks.length > 600) sparks.splice(0, sparks.length - 600);
+      if (sparks.length > 120) sparks.splice(0, sparks.length - 120);
     };
 
     const onLeave = () => {
@@ -138,14 +138,14 @@ export function SparkBackground() {
         const alpha = Math.pow(t, 1.5) * 1.0; // Better fading curve
         const r = s.size * (0.5 + t * 0.8);
 
-        // Draw outer glow
-        const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, r * 8);
-        grad.addColorStop(0, `hsla(${s.hue}, 100%, 75%, ${alpha * 0.6})`);
-        grad.addColorStop(0.5, `hsla(${s.hue}, 95%, 70%, ${alpha * 0.3})`);
+               // Draw outer glow (smaller + fainter so it doesn't wash out content)
+        const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, r * 3);
+        grad.addColorStop(0, `hsla(${s.hue}, 100%, 75%, ${alpha * 0.35})`);
+        grad.addColorStop(0.5, `hsla(${s.hue}, 95%, 70%, ${alpha * 0.15})`);
         grad.addColorStop(1, `hsla(${s.hue}, 92%, 62%, 0)`);
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(s.x, s.y, r * 8, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, r * 3, 0, Math.PI * 2);
         ctx.fill();
 
         // Draw bright core
@@ -176,13 +176,13 @@ export function SparkBackground() {
       <div className="absolute inset-0 hero-gradient opacity-0" />
       <div
         ref={auraRef}
-        className="absolute left-0 top-0 h-[700px] w-[700px] rounded-full opacity-0 blur-2xl transition-opacity duration-300 pointer-events-none"
+          className="absolute left-0 top-0 h-[100px] w-[100px] rounded-full opacity-0 blur-2xl transition-opacity duration-300 pointer-events-none"
         style={{
           background:
-            `radial-gradient(circle, ${auraColor} 0%, ${auraColor.replace('0.5', '0.25')} 40%, transparent 85%)`,
+            `radial-gradient(circle, ${auraColor.replace('0.5', '0.25')} 0%, ${auraColor.replace('0.5', '0.1')} 40%, transparent 80%)`,
         }}
       />
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" style={{ filter: "brightness(1.2) contrast(1.1)" }} />
+       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
     </div>
   );
 }
