@@ -45,7 +45,7 @@ export function PageShell({ children }: { children: ReactNode }) {
                 K
               </div>
               <span className="font-display text-lg font-bold text-white hidden sm:inline drop-shadow-lg">
-                KTOC
+                KTOC Learning Hub
               </span>
             </Link>
 
