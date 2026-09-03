@@ -19,12 +19,12 @@ export function Chatbot() {
           <div className="absolute inset-0 -z-10 h-96 w-full bg-gradient-to-br from-slate-100 via-blue-50 to-purple-100 rounded-3xl blur-3xl opacity-60" />
           
           <h1 className="font-display text-4xl font-semibold tracking-tight">AI Chatbot Assistant</h1>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground animate-entrance" style={{animationDelay: '0.1s'}}>
             Get instant answers from our intelligent assistant. Available 24/7 to help with common questions, troubleshooting, and guidance.
           </p>
 
           {/* Chatbot Card */}
-          <div className="mt-10">
+          <div className="mt-10 animate-entrance" style={{animationDelay: '0.2s'}}>
             {CHATBOT_EMBED_URL ? (
               <div className="surface-card overflow-hidden shadow-lg rounded-2xl border-2 border-blue-200">
                 <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 px-6 py-4">

@@ -16,11 +16,11 @@ export function EnglishVideos() {
           
           <div className="flex items-center justify-between mb-6">
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-4 animate-entrance">
                 <span className="text-3xl">🇬🇧</span>
                 <h1 className="font-display text-4xl font-semibold tracking-tight">English Training Videos</h1>
               </div>
-              <p className="mt-2 max-w-3xl text-base text-muted-foreground">
+              <p className="mt-2 max-w-3xl text-base text-muted-foreground animate-entrance" style={{animationDelay: '0.1s'}}>
                 Comprehensive training videos in English language with professional presentation and detailed explanations
               </p>
             </div>
@@ -28,13 +28,13 @@ export function EnglishVideos() {
               to="/videos"
               className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-4 py-2 text-sm font-semibold hover:bg-black/5 transition-colors"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="h-4 w-4 icon-bounce" />
               Back
             </Link>
           </div>
 
           {/* Info Card */}
-          <div className="mt-8 surface-card p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200">
+          <div className="mt-8 surface-card p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 animate-entrance" style={{animationDelay: '0.2s'}}>
             <h3 className="font-display text-lg font-semibold text-blue-900 mb-2">📺 About These Videos</h3>
             <p className="text-sm text-blue-800">
               All videos are professionally produced in English with clear audio, on-screen demonstrations, and complete documentation. 
@@ -43,7 +43,7 @@ export function EnglishVideos() {
           </div>
 
           {/* Videos Grid */}
-          <div className="mt-10">
+          <div className="mt-10 animate-entrance" style={{animationDelay: '0.3s'}}>
             <h2 className="font-display text-2xl font-semibold mb-2">Available Videos ({englishVideos.length})</h2>
             <p className="text-sm text-muted-foreground mb-6">
               Click any video card to open it on SharePoint
@@ -52,7 +52,7 @@ export function EnglishVideos() {
           </div>
 
           {/* Navigation Cards */}
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid gap-4 md:grid-cols-2 animate-entrance" style={{animationDelay: '0.4s'}}>
             <Link
               to="/videos"
               className="surface-card p-6 bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"

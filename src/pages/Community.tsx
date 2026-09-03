@@ -16,12 +16,12 @@ export function Community() {
           <div className="absolute inset-0 -z-10 h-96 w-full bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 rounded-3xl blur-3xl opacity-60" />
           
           <h1 className="font-display text-4xl font-semibold tracking-tight">Community</h1>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground animate-entrance" style={{animationDelay: '0.1s'}}>
             Ask questions, share knowledge, and connect with fellow engineers across regions. Our vibrant community is here to support your growth and success.
           </p>
 
           {/* Main Community Card */}
-          <div className="mt-10 surface-card overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="mt-10 surface-card overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-entrance" style={{animationDelay: '0.2s'}}>
             {/* Gradient Header */}
             <div className="bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 px-8 py-12">
               <div className="flex items-center gap-4">

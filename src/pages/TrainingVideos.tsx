@@ -52,17 +52,17 @@ export function TrainingVideos() {
       <section className="mx-auto max-w-7xl px-5 py-14 relative z-10">
         {/* Header Section */}
         <div className="mb-12">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-amber-900">
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-amber-900 animate-entrance">
             Training Videos
           </h1>
-          <p className="mt-3 max-w-3xl text-base text-amber-800">
+          <p className="mt-3 max-w-3xl text-base text-amber-800 animate-entrance" style={{animationDelay: '0.1s'}}>
             Comprehensive training program combining newjoinee onboarding with latest video tutorials. 
             Learn at your own pace with structured 4-week curriculum and video resources available in Tamil and English.
           </p>
         </div>
 
         {/* 4-Week Training Path */}
-        <div className="mb-12">
+        <div className="mb-12 animate-entrance" style={{animationDelay: '0.2s'}}>
           <div className="flex items-center gap-2 mb-6">
             <Clock className="h-5 w-5 text-amber-600 icon-rotate" />
             <h2 className="font-display text-2xl font-semibold text-amber-900">4-Week Training Path</h2>
@@ -116,7 +116,7 @@ export function TrainingVideos() {
         </div>
 
         {/* Video Selection */}
-        <div className="mb-12">
+        <div className="mb-12 animate-entrance" style={{animationDelay: '0.3s'}}>
           <div className="flex items-center gap-2 mb-6">
             <Play className="h-5 w-5 text-amber-600 icon-pulse" />
             <h2 className="font-display text-2xl font-semibold text-amber-900">Video Resources</h2>

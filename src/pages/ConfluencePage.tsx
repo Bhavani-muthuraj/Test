@@ -13,18 +13,18 @@ export function ConfluencePage() {
           <div className="absolute inset-0 -z-10 h-96 w-full bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 rounded-3xl blur-3xl opacity-60" />
           
           <h1 className="font-display text-4xl font-semibold tracking-tight">Confluence Knowledge Base</h1>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground animate-entrance" style={{animationDelay: '0.1s'}}>
             Access our Confluence wiki for comprehensive documentation, team guidelines, best practices, and project information. Your central hub for all KTOC knowledge.
           </p>
 
           {/* Main Confluence Card */}
-          <div className="mt-12">
+          <div className="mt-12 animate-entrance" style={{animationDelay: '0.2s'}}>
             <div className="surface-card overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               {/* Gradient Header */}
               <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 px-8 py-12">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="h-16 w-16 rounded-full bg-white/20 flex items-center justify-center backdrop-blur">
-                    <BookMarked className="h-8 w-8 text-white" />
+                    <BookMarked className="h-8 w-8 text-white icon-float" />
                   </div>
                   <div>
                     <h2 className="font-display text-3xl font-semibold text-white">Confluence Wiki</h2>
@@ -83,7 +83,7 @@ export function ConfluencePage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3 text-base font-semibold text-white hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300"
                   >
-                    <BookMarked className="h-5 w-5" />
+                    <BookMarked className="h-5 w-5 icon-rotate" />
                     Open Confluence Wiki
                     <ExternalLink className="h-4 w-4" />
                   </a>
@@ -93,7 +93,7 @@ export function ConfluencePage() {
           </div>
 
           {/* Quick Navigation */}
-          <div className="mt-12">
+          <div className="mt-12 animate-entrance" style={{animationDelay: '0.3s'}}>
             <h2 className="font-display text-2xl font-semibold mb-6">Quick Navigation</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -133,7 +133,7 @@ export function ConfluencePage() {
                   rel="noopener noreferrer"
                   className={`group surface-card p-5 border hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-gradient-to-br ${item.color} ${item.borderColor}`}
                 >
-                  <div className="text-2xl mb-2">{item.icon}</div>
+                  <div className="text-2xl mb-2 icon-bounce">{item.icon}</div>
                   <h3 className="font-display text-sm font-semibold group-hover:text-orange-600 transition-colors">
                     {item.title}
                   </h3>

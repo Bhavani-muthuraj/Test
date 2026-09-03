@@ -71,12 +71,12 @@ export function KnowledgeArticle() {
           <div className="absolute inset-0 -z-10 h-96 w-full bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 rounded-3xl blur-3xl opacity-60" />
           
           <h1 className="font-display text-4xl font-semibold tracking-tight">Knowledge Articles</h1>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground animate-entrance" style={{animationDelay: '0.1s'}}>
             Access comprehensive documentation, guides, and resources. Browse articles and videos to find the information you need.
           </p>
 
           {/* Search Bar */}
-          <div className="mt-8 flex items-center gap-3 rounded-lg surface-card p-4 max-w-md">
+          <div className="mt-8 flex items-center gap-3 rounded-lg surface-card p-4 max-w-md animate-entrance" style={{animationDelay: '0.2s'}}>
             <Search className="h-5 w-5 text-muted-foreground icon-rotate" />
             <input
               type="text"
@@ -100,7 +100,7 @@ export function KnowledgeArticle() {
           </div>
 
           {/* Articles Grid */}
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 animate-entrance" style={{animationDelay: '0.3s'}}>
             {filteredArticles.map((article, idx) => (
               <a
                 key={idx}
@@ -126,7 +126,7 @@ export function KnowledgeArticle() {
           </div>
 
           {/* Quick Links Section */}
-          <div className="mt-14 surface-card p-8">
+          <div className="mt-14 surface-card p-8 animate-entrance" style={{animationDelay: '0.4s'}}>
             <h2 className="font-display text-2xl font-semibold flex items-center gap-2">
               <BookOpen className="h-6 w-6 text-purple-600 icon-rotate" />
               Quick Link Repository

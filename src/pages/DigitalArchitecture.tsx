@@ -12,12 +12,12 @@ export function DigitalArchitecture() {
           <div className="absolute inset-0 -z-10 h-96 w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 rounded-3xl blur-3xl opacity-60" />
           
           <h1 className="font-display text-4xl font-semibold tracking-tight">Digital Architecture</h1>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground animate-entrance" style={{animationDelay: '0.1s'}}>
             System architecture diagrams, technical specifications, and infrastructure designs. View detailed architecture diagrams created with Microsoft Visio.
           </p>
 
           {/* Architecture Components */}
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 animate-entrance" style={{animationDelay: '0.2s'}}>
             {/* System Architecture */}
             <div className="surface-card p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-blue-500">
               <div className="flex items-center gap-3 mb-4">
@@ -42,7 +42,7 @@ export function DigitalArchitecture() {
             <div className="surface-card p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-purple-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-purple-100 text-purple-600">
-                  <Network className="h-5 w-5" />
+                  <Network className="h-5 w-5 icon-rotate" />
                 </div>
                 <h3 className="font-display text-lg font-semibold">Data Flow Diagram</h3>
               </div>
@@ -62,7 +62,7 @@ export function DigitalArchitecture() {
             <div className="surface-card p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-cyan-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-cyan-100 text-cyan-600">
-                  <Zap className="h-5 w-5" />
+                  <Zap className="h-5 w-5 icon-pulse" />
                 </div>
                 <h3 className="font-display text-lg font-semibold">Infrastructure</h3>
               </div>
@@ -82,7 +82,7 @@ export function DigitalArchitecture() {
             <div className="surface-card p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-emerald-500">
               <div className="flex items-center gap-3 mb-4">
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-emerald-100 text-emerald-600">
-                  <Box className="h-5 w-5" />
+                  <Box className="h-5 w-5 icon-swing" />
                 </div>
                 <h3 className="font-display text-lg font-semibold">Component Details</h3>
               </div>
