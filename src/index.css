@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------------------------------------------------------------------
-   Design tokens (edit the two colors in tailwind.config.js to re-theme).
-   These utility classes recreate the soft blue background, the
-   two-tone gradient heading text, and the white "card" style used
-   throughout the site.
---------------------------------------------------------------------- */
-
 body {
   color: #16202e;
 }
@@ -35,3 +28,453 @@ body {
   border-radius: 0.75rem;
   box-shadow: 0 1px 2px rgba(20, 40, 80, 0.04), 0 8px 24px -12px rgba(20, 40, 80, 0.12);
 }
+
+/* ===== PROFESSIONAL SUBTLE BACKGROUNDS ===== */
+
+/* Intro - Light Blue Background with Subtle Particles */
+.bg-intro {
+  position: relative;
+  background: linear-gradient(135deg, #f5f9fc 0%, #eef6fc 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(29, 95, 209, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.8;
+}
+
+.bg-intro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(102, 126, 234, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: particles 40s linear infinite;
+}
+
+/* Product Training - Light Pink with Patterns */
+.bg-product {
+  position: relative;
+  background: linear-gradient(135deg, #fdf5f8 0%, #fef0f5 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-product::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(245, 87, 108, 0.02) 35px, rgba(245, 87, 108, 0.02) 70px);
+  opacity: 0.9;
+}
+
+.bg-product::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(245, 87, 108, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: particles 40s linear infinite;
+}
+
+/* Newjoinee - Light Cyan with Pattern */
+.bg-newjoinee {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9fc 0%, #e6f8fc 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-newjoinee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(79, 172, 254, 0.02) 40px, rgba(79, 172, 254, 0.02) 80px);
+}
+
+.bg-newjoinee::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(79, 172, 254, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: particles 40s linear infinite;
+}
+
+/* Videos - Light Warm with Particles */
+.bg-videos {
+  position: relative;
+  background: linear-gradient(135deg, #fef9f5 0%, #fef5f0 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-videos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(250, 112, 154, 0.02) 30px, rgba(250, 112, 154, 0.02) 60px);
+  opacity: 0.7;
+}
+
+.bg-videos::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(250, 112, 154, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: particles 40s linear infinite;
+}
+
+/* Knowledge - Light Purple with Patterns */
+.bg-knowledge {
+  position: relative;
+  background: linear-gradient(135deg, #f5f3f9 0%, #f0ebf8 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-knowledge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 45px, rgba(102, 126, 234, 0.02) 45px, rgba(102, 126, 234, 0.02) 90px);
+}
+
+.bg-knowledge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(102, 126, 234, 0.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+  animation: particles 40s linear infinite;
+}
+
+/* Architecture - Light Teal with Patterns */
+.bg-architecture {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9fc 0%, #e8f8fb 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-architecture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 25px, rgba(0, 147, 233, 0.02) 25px, rgba(0, 147, 233, 0.02) 50px),
+    repeating-linear-gradient(90deg, transparent, transparent 25px, rgba(0, 147, 233, 0.02) 25px, rgba(0, 147, 233, 0.02) 50px);
+  opacity: 0.8;
+}
+
+.bg-architecture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 147, 233, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: particles 40s linear infinite;
+}
+
+/* Confluence - Light Warm with Patterns */
+.bg-confluence {
+  position: relative;
+  background: linear-gradient(135deg, #fef7f3 0%, #fef3ee 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-confluence::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(255, 107, 107, 0.02) 50px, rgba(255, 107, 107, 0.02) 100px);
+}
+
+.bg-confluence::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 107, 107, 0.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+  animation: particles 40s linear infinite;
+}
+
+/* Community - Light Green with Patterns */
+.bg-community {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9f6 0%, #e8f7f3 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-community::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(56, 239, 125, 0.02) 40px, rgba(56, 239, 125, 0.02) 80px);
+  opacity: 0.6;
+}
+
+.bg-community::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(56, 239, 125, 0.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+  animation: particles 40s linear infinite;
+}
+
+/* Chatbot - Light Purple with Patterns */
+.bg-chatbot {
+  position: relative;
+  background: linear-gradient(135deg, #f5f3f9 0%, #f0ebf8 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-chatbot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(102, 126, 234, 0.02) 35px, rgba(102, 126, 234, 0.02) 70px);
+}
+
+.bg-chatbot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(102, 126, 234, 0.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+  animation: particles 40s linear infinite;
+}
+
+/* Old Videos */
+.bg-oldvideos {
+  position: relative;
+  background: linear-gradient(135deg, #f5f9fc 0%, #eef6fc 100%);
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.bg-oldvideos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(102, 126, 234, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-oldvideos::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(102, 126, 234, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: particles 40s linear infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes particles {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(40px) translateX(5px); }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-entrance {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-header {
+  animation: slideInDown 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+.surface-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.surface-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+button:active {
+  transform: translateY(0px);
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+/* Sparkle background layering fix */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure sparkles are visible over backgrounds but don't block content */
+canvas {
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* ===== ICON ANIMATIONS ===== */
+
+/* Rotating animation */
+@keyframes rotate-continuous {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating/bobbing animation */
+@keyframes float-bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse-icon {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Swing animation */
+@keyframes swing-icon {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Spin and wobble */
+@keyframes spin-wobble {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Icon animation utility classes */
+.icon-rotate {
+  animation: rotate-continuous 3s linear infinite;
+}
+
+.icon-float {
+  animation: float-bounce 2s ease-in-out infinite;
+}
+
+.icon-pulse {
+  animation: pulse-icon 2.5s ease-in-out infinite;
+}
+
+.icon-swing {
+  animation: swing-icon 1.5s ease-in-out infinite;
+}
+
+.icon-bounce {
+  animation: bounce-icon 2s ease-in-out infinite;
+}
+
+.icon-spin-wobble {
+  animation: spin-wobble 2.5s ease-in-out infinite;
+}
+
+/* Apply animations to specific icon types */
+svg.icon-rotate,
+[class*="icon-rotate"] {
+  animation: rotate-continuous 3s linear infinite;
+}
+
+svg.icon-float,
+[class*="icon-float"] {
+  animation: float-bounce 2s ease-in-out infinite;
+}
+
+svg.icon-pulse,
+[class*="icon-pulse"] {
+  animation: pulse-icon 2.5s ease-in-out infinite;
+}
+
+
+

@@ -1,70 +1,144 @@
 import type { ReactNode } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { SparkBackground } from "./SparkBackground";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
-// PageShell wraps every page: it renders the animated background, the
-// sticky top navigation bar (logo + page tabs, no login/sign-in), the
-// page's own content (`children`), and the footer.
-//
-// To add/remove/rename a menu tab, edit the `tabs` array below.
 const tabs = [
-  { to: "/", label: "Intro" },
-  { to: "/videos", label: "Learning Videos" },
-  { to: "/old-videos", label: "Old Videos" },
-  { to: "/community", label: "Community" },
-  { to: "/chatbot", label: "Chatbot" },
+  { to: "/", label: "Intro", icon: "🏠" },
+  { to: "/product-training", label: "Product", icon: "📚" },
+  { to: "/training-videos", label: "Training Videos", icon: "📹" },
+  { to: "/knowledge", label: "Knowledge", icon: "📖" },
+  { to: "/architecture", label: "Architecture", icon: "🏗️" },
+  { to: "/confluence", label: "Confluence", icon: "📄" },
+  { to: "/community", label: "Community", icon: "👥" },
+  { to: "/chatbot", label: "Chatbot", icon: "🤖" },
 ];
 
 export function PageShell({ children }: { children: ReactNode }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Determine menu color based on current page
+  const getMenuColor = () => {
+    if (location.pathname === "/") return "from-blue-500 to-blue-600";
+    if (location.pathname === "/product-training") return "from-pink-500 to-pink-600";
+    if (location.pathname.includes("/training-videos")) return "from-amber-500 to-amber-600";
+    if (location.pathname === "/knowledge") return "from-purple-500 to-purple-600";
+    if (location.pathname === "/architecture") return "from-teal-500 to-teal-600";
+    if (location.pathname === "/confluence") return "from-orange-500 to-orange-600";
+    if (location.pathname === "/community") return "from-green-500 to-green-600";
+    if (location.pathname === "/chatbot") return "from-indigo-500 to-indigo-600";
+    return "from-blue-500 to-blue-600";
+  };
+
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-white overflow-hidden">
       <SparkBackground />
-      <div className="relative z-10 flex min-h-screen flex-col">
-        <header className="sticky top-0 z-20 border-b border-primary/10 bg-white/70 backdrop-blur-xl shadow-sm">
-          <div className="flex flex-nowrap items-center gap-4 px-5 py-3">
-            {/* Logo — edit the "K" text/letter or swap in an <img> here */}
-            <Link to="/" className="flex items-center gap-2.5">
-              <span className="grid h-7 w-12 place-items-center rounded-md bg-primary text-sm font-bold tracking-tight text-primary-foreground">
-                KONE
-              </span>
-              <span className="font-display text-base font-semibold tracking-tight">
-                KTOC Learning Hub
+      <div className="relative z-30 flex min-h-screen flex-col">
+        {/* Stylish Gradient Menu Bar */}
+        <header className={`sticky top-0 z-40 bg-gradient-to-r ${getMenuColor()} shadow-lg transition-all duration-500`}>
+          <div className="flex flex-nowrap items-center gap-8 px-6 py-4">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2 flex-shrink-0 group">
+              <div className="h-10 w-10 rounded-lg bg-white/20 backdrop-blur-md flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:bg-white/30 transition-all duration-300 transform group-hover:scale-110">
+                K
+              </div>
+              <span className="font-display text-lg font-bold text-white hidden sm:inline drop-shadow-lg">
+                KTOC
               </span>
             </Link>
 
-            {/* Menu bar — pushed to the right with ml-auto, stays on one row */}
-            <nav className="ml-auto flex flex-wrap gap-1">
+            {/* Desktop Menu */}
+            <nav className="ml-auto hidden lg:flex gap-1">
               {tabs.map((t) => (
                 <NavLink
                   key={t.to}
                   to={t.to}
                   end={t.to === "/"}
                   className={({ isActive }) =>
-                    [
-                      "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                    `px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center gap-1.5 ${
                       isActive
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:bg-black/5 hover:text-slate-900",
-                    ].join(" ")
+                        ? "bg-white/30 text-white shadow-lg backdrop-blur-md border border-white/40"
+                        : "text-white/80 hover:text-white hover:bg-white/10 border border-white/0"
+                    }`
                   }
                 >
-                  {t.label}
+                  <span>{t.icon}</span>
+                  <span>{t.label}</span>
                 </NavLink>
               ))}
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="ml-auto lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors text-white"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
-          {/* Thin brand-gradient accent line under the header */}
-          <div className="h-[2px] w-full bg-[linear-gradient(90deg,#1d5fd1,#38bdf8)]" />
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden border-t border-white/20 bg-white/10 backdrop-blur-md">
+              <nav className="flex flex-col gap-1 p-4">
+                {tabs.map((t) => (
+                  <NavLink
+                    key={t.to}
+                    to={t.to}
+                    end={t.to === "/"}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
+                        isActive
+                          ? "bg-white/30 text-white backdrop-blur-md"
+                          : "text-white/80 hover:bg-white/10"
+                      }`
+                    }
+                  >
+                    <span>{t.icon}</span>
+                    <span>{t.label}</span>
+                  </NavLink>
+                ))}
+              </nav>
+            </div>
+          )}
         </header>
 
-        <main className="flex-1">{children}</main>
-       <div className="h-[2px] w-full bg-[linear-gradient(90deg,#1d5fd1,#38bdf8)]" />
-        <footer className="border-t border-border bg-white/60 py-6 backdrop-blur-xl">
-          <div className="mx-auto max-w-7xl px-5 text-center text-xs text-muted-foreground">
+        {/* Dynamic Background */}
+        <div
+          className={`flex-1 w-full min-h-full relative transition-all duration-500 ${getBackgroundClass(
+            location.pathname
+          )}`}
+        >
+          <main className="relative z-10 w-full pointer-events-auto">{children}</main>
+        </div>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-200 bg-white/60 backdrop-blur py-6">
+          <div className="mx-auto max-w-7xl px-6 text-center text-xs text-slate-600">
             KTOC Learning Hub — internal onboarding resource for new elevator engineers.
           </div>
         </footer>
       </div>
     </div>
   );
+}
+
+function getBackgroundClass(pathname: string): string {
+  if (pathname === "/") return "bg-intro";
+  if (pathname === "/product-training") return "bg-product";
+  if (pathname.includes("/training-videos")) return "bg-videos";
+  if (pathname === "/knowledge") return "bg-knowledge";
+  if (pathname === "/architecture") return "bg-architecture";
+  if (pathname === "/confluence") return "bg-confluence";
+  if (pathname === "/community") return "bg-community";
+  if (pathname === "/chatbot") return "bg-chatbot";
+  if (pathname === "/old-videos") return "bg-oldvideos";
+  return "bg-intro";
 }
